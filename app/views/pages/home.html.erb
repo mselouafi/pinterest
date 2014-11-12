@@ -1,6 +1,11 @@
 <div class="jumbotron">
 	<h1>Hello</h1>
-	<h2> do your thing ! Sign up <%= link_to "here", "about", class: "btn btn-warning btn-lg" %>.</h2>
+<% if user_signed_in? %>
+          # do something
+     <% else %>
+	<h2> do your thing !  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-warning btn-lg" %>.
+	  <%= link_to "log in", new_user_session_path, class: "btn btn-primary btn-lg" %>.</h2>
+	  <% end %>
 	<p  class="text-warning">dont forget to have fun </p> 
 <%= image_tag "image.png", class:"img-responsive" %>
 </div>
